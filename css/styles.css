@@ -1,0 +1,483 @@
+:root{
+    --main-font: Helvetica;
+    --font-size: 16px;
+    --main-color: #0b3c5d;
+    --second-color: white;
+    --main-modal-color: rgba(11, 60, 93, 0.85);
+    --second-modal-color: rgba(255, 255, 255, 0.85);
+    --container-width: 1200px;
+}
+html {
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main{
+    padding: 0rem;
+}
+h1, h2, h3, h4, h5, h6{
+    color: #1d273b;
+    font-weight: 300;
+    font-family: var(--main-font);
+}
+h2{
+    text-transform: uppercase;
+	font-weight: 700;
+    text-align: center;
+    position: relative;
+    padding-top: 15px;
+}
+h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+/* *********     menu hamburguesa     ********** */
+
+header{
+    position: sticky;
+    top: 0;
+    padding: 1em;
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+header h1{
+    margin: 0 auto;
+    text-align: center;
+}
+.section {
+    
+
+} 
+
+ .panel{
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--second-modal-color);
+    transition: trasnform .3s ease;
+    transform: translate(0,-100%);
+}
+
+.panel.is-active {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.panel-btn {
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+}
+.hamburger-inner::before{
+    background-color: white;
+}
+.hamburger-inner::after{
+    background-color: white;
+}
+.hamburger-inner{
+    background-color: white;
+}
+.hamburger.is-active .hamburger-inner::before{
+    background-color: white;
+}
+.hamburger.is-active .hamburger-inner::after{
+    background-color: white;
+}
+.hamburger.is-active .hamburger-inner{
+    background-color: white;
+} 
+
+
+
+
+
+
+
+
+
+
+.menu {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}  
+.menu a {
+    padding: 2rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    font-weight: bold;
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+}
+
+
+
+
+
+
+
+
+.hero-image{
+    min-height: 100vh;
+    background-image: url("../img/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #FFF;
+}
+.hero-image div{
+    min-height: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, .60);
+
+}
+.hero-image h1{
+    color: #295179;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.hero-image p{
+    color: #434d49;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    font-weight: 400;
+}
+.hero-image span{
+    color: #000000;
+    font-size: 30px;
+    font-weight: 700;
+}
+.social-links a{
+    font-size: 20px;
+    display: inline-block;
+    color: #adb6c7;
+    border: 1px solid #adb6c7;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
+    cursor: pointer;
+    text-align: center;
+    transition: all ease-in-out 0.3s;
+    margin-right: 5px;
+    
+
+}
+.social-links a:hover {
+    color: #0563bb;
+    color: #ffff;
+    background-color: #135D0B;
+    border-color: #135D0B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-aboutme{
+    display: flex;
+    justify-content: space-between;
+	height: 650px;
+    
+}
+
+.content-aboutme .aboutme-Item{
+    width: 48%;
+    text-align: center;
+}
+.content-aboutme .aboutme-Item .aboutme-short{
+    font-size: 20px;
+    
+}
+.content-aboutme .aboutme-Item img{
+    
+    border-radius: 10%;
+}
+
+
+
+
+
+
+
+.container-skills{
+    background: var(--main-color);
+}
+
+.skills-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
+}
+
+.skills-content .skills-items{
+    width: 30.3333%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 40px 35px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+}
+
+.skills-content .skills-items .skill{
+    cursor: pointer;
+    color: #FFF;
+}
+.skills-content .skills-items a:hover {
+    color: #135D0B;
+}
+
+.skills-content .skills-items .skill::after{
+    content: "";
+    font-size: 15px;
+    color: white;
+    text-align: right;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 0;
+    height: 15px;
+
+    background: #076585;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c8c8c8 var(--main-color));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c8c8c8, var(--main-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 1000px;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-resume h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #45505b;
+}
+.content-resume h4{
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #0563bb;
+    margin-bottom: 10px;
+}
+.content-resume h5{
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.content-resume ul{
+    list-style-type: none;
+    padding-left: 20px;
+
+}
+.content-resume ul li{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+
+.content-resume .education, .content-resume .work-experience{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-resume .content-resume-item{
+    width: 45%;
+    padding-bottom: 15px;
+    position:relative; 
+    left: 15px;
+}
+
+.content-resume .profesiona-experience-item h4::before{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -15px;
+    top: 0;
+    background: #fff;
+    border: 2px solid #0563bb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+
+    margin: auto;
+    overflow: hidden;
+    padding-top: 5px;
+    display: flex;
+    background-color: #272727;
+    justify-content: center;
+
+}
+.footer-item{
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+
+}
+footer .footer-item h3{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+footer .footer-item .social-links{
+    padding-bottom: 10px;
+}
+footer .footer-item h4{
+    font-size: 11px;
+    color: #cecece;
+    padding-bottom: 7px;
+}
+
+
+
+
+
+
+/* Breakpoints responsive */
+@media screen and (max-width:800px){
+    .content-aboutme{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .content-aboutme .aboutme-Item{
+        width: 95%;
+        text-align: center;
+    }
+    .content-aboutme .aboutme-Item img{
+        width: auto;
+        max-width: 100%;
+        border-radius: 20%;
+    }
+
+}
+
+
+
+
+@media screen and (max-width:600px){
+    .content-aboutme .aboutme-Item img{
+        height: auto;
+    }
+    .content-resume .education, .content-resume .work-experience{
+        text-align: left;
+    }
+    .content-resume .content-resume-item{
+        width: 90%;
+    }
+    .skills-content .skills-items{
+		
+        width: 48%;
+    }
+    
+}
+
+
